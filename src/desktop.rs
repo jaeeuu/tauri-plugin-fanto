@@ -266,7 +266,7 @@ async fn edge_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
                         "--ash-no-nudges",
                         "--disable-component-extensions-with-background-pages",
                         "--log-level=OFF",
-                        // "--guest",
+                        "--guest",
                         "--disable-client-side-phishing-detection",
                         "--disable-features=msHubApps",
                         "--enable-features=msEdgeTowerAutoHide",
