@@ -254,8 +254,7 @@ async fn edge_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
                     "args": [
                         // "--headless",
                         // "-inprivate",
-                        "disable-infobars",
-                        "disable-extensions",
+                        "--disable-extensions",
                         "--disable-default-apps",
                         "--disable-features=InterestFeedContentSuggestions",
                         "--disable-features=Translate",
