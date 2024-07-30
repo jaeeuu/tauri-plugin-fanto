@@ -251,6 +251,7 @@ async fn edge_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
                 String::from("ms:edgeOptions"),
                 serde_json::json!({
                     "excludeSwitches": ["enable-logging", "enable-automation"],
+                    "useAutomationExtension": false,
                     "args": [
                         // "--headless",
                         // "-inprivate",
