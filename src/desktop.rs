@@ -95,7 +95,7 @@ impl<R: Runtime> Fanto<R> {
         let driver = edge_client(self.port, &self.app_local_data_dir).await?;
 
         let _ = driver
-            .set_ua("Mozilla/5.0 (Windows NT 10.0; Win64; x64)")
+            .set_ua("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36")
             .await;
         let _ = driver
             .update_timeouts(TimeoutConfiguration::new(
@@ -252,7 +252,9 @@ async fn edge_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
                 serde_json::json!({
                     "args": [
                         // "--headless",
-                        "-inprivate",
+                        // "-inprivate",
+                        "disable-infobars",
+                        "disable-extensions",
                         &format!("--user-data-dir={}\\driver-user-data", tauri_path.display()),
                     ],
                 }),
