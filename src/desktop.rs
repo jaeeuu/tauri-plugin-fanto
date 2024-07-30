@@ -250,7 +250,7 @@ async fn edge_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
             [(
                 String::from("ms:edgeOptions"),
                 serde_json::json!({
-                    "excludeSwitches": ["enable-logging"],
+                    "excludeSwitches": ["enable-logging", "enable-automation"],
                     "args": [
                         // "--headless",
                         // "-inprivate",
@@ -271,6 +271,8 @@ async fn edge_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
                         "--disable-client-side-phishing-detection",
                         "--disable-features=msHubApps",
                         "--enable-features=msEdgeTowerAutoHide",
+                        "--enable-features=msEdgeCompactMode",
+                        "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36",
                         &format!("--user-data-dir={}\\driver-user-data", tauri_path.display()),
                     ],
                 }),
