@@ -66,7 +66,7 @@ impl<R: Runtime> Fanto<R> {
                 .creation_flags(0x08000000)
                 .spawn()?;
 
-            println!("webdriver process's ID is {}", process.id());
+            // println!("webdriver process's ID is {}", process.id());
             let status = process.try_wait()?;
             if status.is_none() {
                 break process;
