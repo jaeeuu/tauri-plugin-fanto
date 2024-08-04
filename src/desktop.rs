@@ -100,8 +100,8 @@ impl<R: Runtime> Fanto<R> {
         let _ = driver
             .update_timeouts(TimeoutConfiguration::new(
                 Some(std::time::Duration::from_secs(60)),
-                Some(std::time::Duration::from_secs(60)),
-                Some(std::time::Duration::from_secs(15)),
+                Some(std::time::Duration::from_secs(30)),
+                Some(std::time::Duration::from_secs(10)),
             ))
             .await;
         Ok(driver)
