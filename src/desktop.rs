@@ -224,7 +224,7 @@ fn check_version(executable: &PathBuf) -> Result<String> {
 
 #[cfg(target_os = "macos")]
 async fn chrome_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
-    Ok(ClientBuilder::native()
+    Ok(ClientBuilder::rustls()
         .capabilities(
             [(
                 String::from("goog:chromeOptions"),
@@ -245,7 +245,7 @@ async fn chrome_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
 
 #[cfg(target_os = "windows")]
 async fn edge_client(port: u16, tauri_path: &PathBuf) -> Result<Client> {
-    Ok(ClientBuilder::native()
+    Ok(ClientBuilder::rustls()
         .capabilities(
             [(
                 String::from("ms:edgeOptions"),

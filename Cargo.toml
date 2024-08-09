@@ -16,13 +16,13 @@ documentation = "https://docs.rs/tauri-plugin-fanto/latest/tauri_plugin_fanto/"
 tauri = { version = "2.0.0-beta.6" }
 serde = "1.0"
 thiserror = "1.0"
-webdriver-downloader = { version = "0.14.3", default-features = false, features = ["native-tls"] }
-fantoccini = { version = "0.19.3", default-features = false, features = ["native-tls"] }
-serde_json = { version = "1.0.114", default-features = false }
+webdriver-downloader = { version = "0.14.3", default-features = false, features = ["rustls-tls"] }
+fantoccini = { version = "0.19.3", features = ["rustls-tls"] }
+serde_json = { version = "1.0.114" }
 
 [build-dependencies]
 tauri-plugin = { version = "2.0.0-beta.4", features = ["build"] }
 
 [target.'cfg(windows)'.dependencies]
-reqwest = { version = "0.11.24", default-features = false, features = ["native-tls"] }
+reqwest = { version = "0.11.24", default-features = false, features = ["rustls-tls"] }
 zip = { version = "0.6.6", default-features = false }
